@@ -40,6 +40,8 @@ body {
     font-size: 20px;
     line-height: 24px;
     font-weight: 400;
+    overflow-x: hidden;
+    min-width: 320px;
 }
 
 .container {
@@ -73,6 +75,10 @@ body {
     display: flex;
 }
 
+.menu__btn {
+    display: none;
+}
+
 .header__adress {
     margin-right: 60px;
     width: 265px;
@@ -83,11 +89,46 @@ body {
 .header__adress::before {
     content: "";
     position: absolute;
-    background-image: url(/images/header-marker.svg);
+    background-image: url(../images/header-marker.svg);
     width: 30px;
     height: 30px;
     left: 0;
     top: -10px;
+}
+
+.menu-mobile__list {
+    width: 243px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(-100%);
+    transition: all .3s;
+    position: absolute;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.menu-mobile__list.menu-mobile__list--active{
+    transform: translateX(0%);
+}
+
+.menu-mobile__item {
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu-mobile__link {
+    display: block;
+    padding-left: 53px;
+    padding-top: 36px;
+}
+
+.menu-mobile__img {
+    position: absolute;
+    bottom: 0;
+    left: 11px;
+}
+
+.menu__mobile-linewrapper {
+    display: none;
 }
 
 .user-list {
@@ -115,8 +156,8 @@ body {
     line-height: 20px;
     font-weight: 500;
     text-align: center;
-    bottom: -15px;
-    right: -14px;
+    bottom: -2px;
+    right: -13px;
 }
 
 .header__bottom {
@@ -266,7 +307,7 @@ li.slick-active button {
 
 .sale-item__price-new::after {
     content: "";
-    background-image: url(/images/icons-price.svg);
+    background-image: url(../images/icons-price.svg);
     position: absolute;
     right: 0;
     top: 8px;
@@ -283,14 +324,14 @@ li.slick-active button {
     color: #C4C4C4;
     padding: 2px 5px;
     margin-right: 15px;
-    background-image: url(/images/old-line.svg);
+    background-image: url(../images/old-line.svg);
     background-repeat: no-repeat;
 }
 
 .sale-item__price-old::after {
     content: "";
     position: absolute;
-    background-image: url(/images/icons-price-old.svg);
+    background-image: url(../images/icons-price-old.svg);
     right: -10px;
     top: 4px;
     width: 8px;
@@ -442,7 +483,7 @@ li.slick-active button {
 }
 
 .cathegories__item-text::after {
-    content: url(/images/link-arrow.svg);
+    content: url(../images/link-arrow.svg);
     padding-left: 4px;
 }
 
@@ -497,11 +538,11 @@ li.slick-active button {
     height: 22px;
     top: 0;
     left: 0;
-    background-image: url(/images/favorite-deactive.svg);
+    background-image: url(../images/favorite-deactive.svg);
 }
 
 .product-item__favorite--active.product-item__favorite::before {
-    background-image: url(/images/favorite-active.svg);
+    background-image: url(../images/favorite-active.svg);
 }
 
 .product-item__price {
@@ -778,7 +819,7 @@ li.slick-active button {
     content: "";
     position: absolute;
     right: 0;
-    background-image: url(/images/link-arrow.svg);
+    background-image: url(../images/link-arrow.svg);
     height: 9px;
     width: 6px;
     bottom: 5px;
@@ -969,7 +1010,7 @@ button.catalog__filter-btnline {
 
 .filter__item-drop::before {
     content: "";
-    background-image: url(/images/arrow-down.svg);
+    background-image: url(../images/arrow-down.svg);
     position: absolute;
     left: 0;
     bottom: 5px;
@@ -1021,7 +1062,7 @@ button.catalog__filter-btnline {
        border-bottom:none;
        border-left: none;
        transform: rotate(0);
-    background-image: url(/images/check.svg);
+    background-image: url(../images/check.svg);
  }
 
  .jq-radio.checked .jq-radio__div {
@@ -1159,7 +1200,7 @@ button.catalog__filter-btnline {
 }
 
 .jq-selectbox__trigger {
-    background-image: url(/images/arrow-down.svg);
+    background-image: url(../images/arrow-down.svg);
     bottom: 5px;
     width: 12px;
     height: 8px;
@@ -1310,7 +1351,7 @@ button.catalog__filter-btnline {
 .filter__extra::after {
     content: '';
     position: absolute;
-    background-image: url(/images/arrow-down.svg);
+    background-image: url(../images/arrow-down.svg);
     top: 3px;
     right: 0;
     width: 12px;
@@ -1366,7 +1407,7 @@ button.catalog__filter-btnline {
     font-size: 30px;
     line-height: 44px;
     opacity: 0.6;
-    background-image: url('/images/old-line.svg');
+    background-image: url('../images/old-line.svg');
     display: inline-block;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1592,4 +1633,28 @@ margin-left: auto;
     border-radius: 3px;
     border: none;
     cursor: pointer;
+}
+
+.product-slider .slick-dots {
+    bottom: -30px;
+}
+
+.product-slider .slick-dots button {
+    background-color: #C4C4C4;
+}
+
+.product-slider .slick-dots .slick-active button {
+    background-color: #1C62CD;
+}
+
+.aside__btn {
+    display: none;
+}
+
+.product-card__btn-mobile {
+    display: none;
+}
+
+.footer__topdrop {
+    pointer-events: none;
 }
